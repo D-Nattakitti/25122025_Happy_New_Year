@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Wheel - วงล้อเสี่ยงโชค</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>วงล้อเสี่ยงโชค</h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="wheel-section">
+                <div class="wheel-container">
+                    <canvas id="wheelCanvas" width="500" height="500"></canvas>
+                    <div class="wheel-pointer"></div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="input-group">
+                    <label for="nameInput">รายชื่อ (หนึ่งชื่อต่อบรรทัด)</label>
+                    <textarea id="nameInput" placeholder="ใส่รายชื่อที่นี่..."></textarea>
+                    <div class="button-row">
+                        <button id="addBtn" class="btn primary">เพิ่มรายชื่อ</button>
+                        <button id="clearInputBtn" class="btn secondary">ล้างช่องกรอก</button>
+                    </div>
+                </div>
+
+                <div class="list-group">
+                    <div class="list-header">
+                        <h3>รายชื่อในวงล้อ (<span id="count">0</span>/50)</h3>
+                        <button id="clearListBtn" class="btn danger small">ล้างทั้งหมด</button>
+                    </div>
+                    <ul id="nameList" class="name-list">
+                        <!-- Items will be added here -->
+                    </ul>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="spinBtn" class="btn grand-action">หมุนวงล้อ!</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Winner Modal -->
+    <div id="winnerModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 ผู้โชคดีคือ 🎉</h2>
+            <div id="winnerName" class="winner-text">---</div>
+            <button id="closeModalBtn" class="btn primary">ตกลง</button>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
